@@ -3,18 +3,12 @@ package algorithms;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-/**
- * Implementation of Kadane's algorithm with start and end position tracking.
- */
 public final class KadaneAlgorithm {
 
     private KadaneAlgorithm() {
-        // utility class
+
     }
 
-    /**
-     * Immutable result structure describing the maximum subarray.
-     */
     public static final class Result {
         private final long maxSum;
         private final int startIndex;
@@ -66,13 +60,7 @@ public final class KadaneAlgorithm {
         }
     }
 
-    /**
-     * Computes the maximum subarray for the provided array using Kadane's algorithm.
-     *
-     * @param array the input array; must not be {@code null}
-     * @return result containing the maximum sum and its bounds; if the array is empty the
-     * result contains a sum of 0 with start and end indices equal to -1
-     */
+
     public static Result maxSubarray(int[] array) {
         Objects.requireNonNull(array, "array");
         if (array.length == 0) {
@@ -104,10 +92,7 @@ public final class KadaneAlgorithm {
         return new Result(bestSum, bestStart, bestEnd);
     }
 
-    /**
-     * Computes the maximum subarray using a quadratic-time baseline algorithm. Intended for
-     * validation and benchmarking.
-     */
+
     public static Result bruteForceMaxSubarray(int[] array) {
         Objects.requireNonNull(array, "array");
         if (array.length == 0) {
