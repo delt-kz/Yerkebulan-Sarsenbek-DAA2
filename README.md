@@ -16,6 +16,6 @@ To validate the theoretical complexity, the project includes a benchmarking tool
 ### 📝 Project Documentation
 
 * **Pair's Work Report:**
-    * [Yerkebulan Sarsenbek 2 DESIGN.pdf](Yerkebulan%20Sarsenbek%202%20DESIGN.pdf) 💡
+    * [Analysis Report](docs/analysis-report.pdf) 💡
 * **Pair Submission Report:**
-    * [Pair Submission Report](Pair_Submission_Report.pdf) ✨
+    * [Pair Submission Report](docs/pair_submission_report.pdf) ✨
