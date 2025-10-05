@@ -1,5 +1,7 @@
 package metrics;
 
+import algorithms.KadaneAlgorithm;
+
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
@@ -14,9 +16,7 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.function.IntFunction;
 
-/**
- * Collects runtime and memory metrics for Kadane's algorithm.
- */
+
 public class PerformanceTracker {
 
     private final List<BenchmarkRecord> records = new ArrayList<>();
@@ -51,7 +51,7 @@ public class PerformanceTracker {
             int[] input = generator.apply(inputSize);
             long beforeMemory = usedMemory();
             long start = System.nanoTime();
-            Result result = KadaneAlgorithm.maxSubarray(input);
+            KadaneAlgorithm.Result result = KadaneAlgorithm.maxSubarray(input);
             long duration = System.nanoTime() - start;
             long afterMemory = usedMemory();
             Objects.requireNonNull(result, "result");
