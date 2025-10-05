@@ -82,16 +82,15 @@ public class PerformanceTracker {
     public void exportCsv(Path path) {
         Objects.requireNonNull(path, "path");
         List<String> lines = new ArrayList<>(records.size() + 1);
-        lines.add("distribution,input_size,average_ns,min_ns,max_ns,avg_memory_bytes");
+        lines.add("distribution,input_size,average_ns,min_ns,max_ns");
         for (BenchmarkRecord record : records) {
             lines.add(String.format(Locale.ROOT,
-                    "%s,%d,%d,%d,%d,%d",
+                    "%s,%d,%d,%d,%d",
                     record.distribution(),
                     record.inputSize(),
                     record.averageDuration().toNanos(),
                     record.minDuration().toNanos(),
-                    record.maxDuration().toNanos(),
-                    record.averageMemoryBytes()));
+                    record.maxDuration().toNanos()));
         }
         try {
             Files.createDirectories(path.getParent());
